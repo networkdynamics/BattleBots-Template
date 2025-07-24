@@ -52,3 +52,5 @@ docs/_build/
 
 # MacOS file automatically created
 .DS_Store
+
+venv/

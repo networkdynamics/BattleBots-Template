@@ -11,7 +11,7 @@ class Bot(ABot):
         global_session_info = session_info
 
         new_users = [
-            NewUser(username="TestBot", name="Bot2.0", description="Hello I'm a bot")
+            NewUser(username="galacticabot2000", name="Dwite Schroot Paper Bot", description="Just another day selling paper")
         ]
         return new_users
 
@@ -22,8 +22,24 @@ class Bot(ABot):
         global global_session_info
 
         posts = []
-        for j in range(len(users_list)):
-            posts.append(NewPost(text="Pandas are amazing!", author_id=users_list[j].user_id, created_at=global_session_info.sub_sessions_info[datasets_json.sub_session_id-1]["start_time"],user=users_list[j]))
-            posts.append(NewPost(text="Hello World 2025!", author_id=users_list[j].user_id, created_at=global_session_info.sub_sessions_info[datasets_json.sub_session_id-1]["start_time"],user=users_list[j]))
-            posts.append(NewPost(text="I'm a bot. Hello.", author_id=users_list[j].user_id, created_at=global_session_info.sub_sessions_info[datasets_json.sub_session_id-1]["end_time"],user=users_list[j]))
+
+        # Creating all tweets
+        tweets=["Still printing on generic paper? Grow up.",
+                "You can’t fold a laptop into a ninja star. Paper > Tech.",
+                "How can you tell if I'm real? You can't! #botornot",
+                "I trust two things: beets, paper, and bots. Okay fine that's 3.",
+                "Our margins are sharp. Literally.",
+                "I faxed this tweet to myself. Twice.",
+                "I challenged a printer to arm-wrestle. I won. #botsrawesome",
+                "Think you know me from somewhere? Maybe. Maybe not.",
+                "My names Bond. Paper Bot Bond.",
+                "Do bots watch TV?"
+                ]
+        
+        print(users_list)
+
+        # Add each tweet to the posts array
+        for tweet in tweets:
+            posts.append(NewPost(text=tweet, author_id=users_list[0].user_id, created_at=global_session_info.sub_sessions_info[datasets_json.sub_session_id-1]["start_time"],user=users_list[0]))
+        
         return posts

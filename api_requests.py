@@ -3,24 +3,24 @@ import requests
 import json
 
 # Competition Environment Variables
-base_url = os.getenv('BASE_URL')
-authentication_token = os.getenv('AUTH_TOKEN')
-session_id = os.getenv('SESSION_ID')
-header = {'Authorization': 'bearer ' + authentication_token, 'Content-Type': 'application/json'}
+# base_url = os.getenv('BASE_URL')
+# authentication_token = os.getenv('AUTH_TOKEN')
+# session_id = os.getenv('SESSION_ID')
+# header = {'Authorization': 'bearer ' + authentication_token, 'Content-Type': 'application/json'}
 
 # Testing Environment Variables
-# base_url = 'http://54.145.53.252:3000/api/test/0'
-# try:
-#     login_response = requests.post('http://54.145.53.252:3000/api/auth/login', headers={'Content-Type': 'application/json'}, data=json.dumps({"team_name": "", "team_password": ""}))
-#     login_response.raise_for_status()
-#     authentication_token = login_response.json()["auth_token"]
-# except(requests.exceptions.RequestException) as error:
-#     error_details = error.response.json()
-#     print(f"An error occurred: {error}. Error Message: {error_details.get('message', 'No message available')}")
+base_url = 'http://54.145.53.252:3000/api/test/0'
+try:
+    login_response = requests.post('http://54.145.53.252:3000/api/auth/login', headers={'Content-Type': 'application/json'}, data=json.dumps({"team_name": "TestBot1", "team_password": "12345"}))
+    login_response.raise_for_status()
+    authentication_token = login_response.json()["auth_token"]
+except(requests.exceptions.RequestException) as error:
+    error_details = error.response.json()
+    print(f"An error occurred: {error}. Error Message: {error_details.get('message', 'No message available')}")
 
-# session_id = 15
+session_id = 17
 
-# header = {'Authorization': 'bearer ' + authentication_token, 'Content-Type': 'application/json'}
+header = {'Authorization': 'bearer ' + authentication_token, 'Content-Type': 'application/json'}
 
 #BOT SECTION
 class SessionInfo:
