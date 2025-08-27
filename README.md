@@ -1,1 +1,1 @@
-# BattleBotsTemplate
+# BattleBots-Template
