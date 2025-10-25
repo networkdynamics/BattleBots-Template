@@ -5,6 +5,6 @@ class Detector:
         marked_account = []
 
         for user in session_data["users"]:
-            marked_account.append({"user_id": f"{user['user_id']}", "confidence": 50, "bot": False})
+            marked_account.append({"user_id": f"{user['id']}", "confidence": 50, "bot": False})
 
         return marked_account

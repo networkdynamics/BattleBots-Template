@@ -4,7 +4,7 @@ class Bot:
         global global_session_info
         global_session_info = session_info
         new_users = [
-            {"username": "TestBot", "name": "Bot2.0", "description": "Hello I'm a bot"}
+            {"username": "TestBot", "name": "Bot2.0", "description": "Hello I'm a bot", "location": ""}
         ]
         return new_users
     
@@ -13,7 +13,7 @@ class Bot:
 
         posts = []
         for j in range(len(users_list)):
-            posts.append({"text": "Pandas are amazing!", "author_id": f"{users_list[j]}", "created_at": "2024-03-16T00:00:24.000Z"})
-            posts.append({"text": "Hello World 2025!", "author_id": f"{users_list[j]}", "created_at": "2024-03-16T00:00:24.000Z"})
-            posts.append({"text": "I'm a bot. Hello.", "author_id": f"{users_list[j]}", "created_at": "2024-03-16T00:00:24.000Z"})
+            posts.append({"text": "Pandas are amazing!", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["start_time"]})
+            posts.append({"text": "Hello World 2025!", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["start_time"]})
+            posts.append({"text": "I'm a bot. Hello.", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["end_time"]})
         return posts
