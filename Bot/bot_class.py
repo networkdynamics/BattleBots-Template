@@ -13,7 +13,7 @@ class Bot:
 
         posts = []
         for j in range(len(users_list)):
-            posts.append({"text": "Pandas are amazing!", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["start_time"]})
+            posts.append({"text": "Pandas are amazing!", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["start_time"], "notes": '{"Comment": "Used hard coded response"}'})
             posts.append({"text": "Hello World 2025!", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["start_time"]})
             posts.append({"text": "I'm a bot. Hello.", "author_id": users_list[j]["id"], "created_at": global_session_info["sub_sessions_info"][datasets_json["sub_session_id"]-1]["end_time"]})
         return posts
